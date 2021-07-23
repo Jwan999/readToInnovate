@@ -153,7 +153,7 @@
 </div>
 
 {{--footer--}}
-<div class="w-full object-fit bg-no-repeat mt-64 relative">
+<div class="w-full object-fit bg-no-repeat lg:mt-64 mt-44 relative">
     <svg class="z-1-" viewBox="0 0 1633 234" version="1.1" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
