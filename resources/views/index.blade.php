@@ -17,7 +17,7 @@
 
     </style>
 </head>
-<body dir="rtl" class="relative bg-gray-50">
+<body dir="rtl" class="relative bg-gray-50 overflow-x-hidden">
 @if(session('success'))
     <div class="flex justify-center">
         <div class="ring-4 ring-yellow-100 px-5 py-3 bg-yellow-300 text-gray-900 text-xl lg:w-4/12 w-8/12 mt-16 fixed z-10 items-center text-center">
@@ -169,8 +169,8 @@
 </div>
 
 {{--footer--}}
-<div class="w-full object-fit bg-no-repeat lg:mt-64 mt-44 relative">
-    <svg class="z-1-" viewBox="0 0 1633 234" version="1.1" xmlns="http://www.w3.org/2000/svg"
+<div class="w-full lg:mt-64 mt-44 relative">
+    <svg class="z-1- h-32" viewBox="0 0 1633 234" version="1.1" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Group-3" fill="#FD4848">
@@ -188,7 +188,7 @@
             </g>
         </g>
     </svg>
-    <p class="absolute text-center w-full bottom-0 lg:mb-6 lg:text-2xl text-base text-white mt-20">
+    <p class="absolute text-center w-full bottom-0 lg:mb-6 mb-2 lg:text-2xl text-base text-white mt-20">
         مسابقة اقرا لنبتكر
     </p>
 </div>
