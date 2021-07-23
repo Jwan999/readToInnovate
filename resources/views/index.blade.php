@@ -17,7 +17,7 @@
 
     </style>
 </head>
-<body dir="rtl" class="relative bg-gray-50 overflow-x-hidden">
+<body dir="rtl" class="relative bg-gray-50 overflow-x-hidden max-w-full">
 @if(session('success'))
     <div class="flex justify-center">
         <div class="ring-4 ring-yellow-100 px-5 py-3 bg-yellow-300 text-gray-900 text-xl lg:w-4/12 w-8/12 mt-16 fixed z-10 items-center text-center">

@@ -4,6 +4,10 @@ body {
     font-family: 'El Messiri', sans-serif;
 }
 
+html, body {
+    position: relative;
+    overflow-x: hidden;
+}
 
 #menu-toggle:checked + #menu {
     display: block;
