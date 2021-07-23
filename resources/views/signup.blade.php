@@ -227,23 +227,30 @@
                 @endif
 
                 <h1 class="mt-6 FD4848 text-lg">
-                    عدد الاحرف المسموحة 500
+                    عدد الكلمات المسموحة 500
                 </h1>
-                <textarea v-model="story" name="story" v-on:input="charCount" :maxlength="500"
+                <textarea ref="max" v-model="story" name="story" v-on:input="wordCount"
+                          :maxlength="max"
+                          {{--                          @keypress="words == 500 ? $event.preventDefault() : false"--}}
+                          {{--                          :maxlength="story.split(' ').length == 3000 ? 3000 : 10000"--}}
                           rows="12"
                           class="mt-3 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                           placeholder="القصة"></textarea>
 
                 <h1 class="mt-3 text-gray-700 text-lg">
-                    @{{chars}} عدد الحروف
+                    @{{words}} عدد الكلمات
                 </h1>
                 @if($errors->has('story'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('story') }}</div>
                 @endif
-
+                <div v-if="words > 500"
+                     :class="shake"
+                     class="text-red-500 text-base opacity-95">عدد كلمات القصة يتجاوز 500 كلمة يرجي
+                    تقليل عدد الكلمات
+                </div>
 
                 <div class="flex justify-center">
-                    <button type="submit"
+                    <button type="submit" @click="submit"
                             class="blue px-5 py-3 text-white text-xl mt-10 shadow focus:shadow-2xl focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">
                         ارسال
 
@@ -251,10 +258,9 @@
                 </div>
             </div>
         </form>
-
     </div>
-
 </div>
+
 
 <script src="js/app.js"></script>
 
@@ -264,21 +270,26 @@
         data: {
             selected: 'المحافظة',
             story: '',
-            chars: 0,
-            cities: ['خارج العراق','واسط', 'نينوى', 'النجف', 'ميسان', 'المثنى', 'كربلاء', 'كركوك', 'صلاح الدين', 'سليمانية', 'ذي قار', 'ديالى', 'القادسية', 'دهوك', 'حلبجة', 'البصرة', 'بغداد', 'بابل', 'الأنبار', 'أربيل']
+            words: 0,
+            max: 100000,
+            shake: '',
+            cities: ['خارج العراق', 'واسط', 'نينوى', 'النجف', 'ميسان', 'المثنى', 'كربلاء', 'كركوك', 'صلاح الدين', 'سليمانية', 'ذي قار', 'ديالى', 'القادسية', 'دهوك', 'حلبجة', 'البصرة', 'بغداد', 'بابل', 'الأنبار', 'أربيل']
         },
         methods: {
-            // submit() {
-            //     if (this.selected === 'المحافظة') {
-            //         this.selected = null
-            //         return
-            //     }
-            //     this.$refs['phone'].value = this.full_phone
-            //
-            // },
-            charCount() {
-                this.chars = this.story.length
-                // console.log(this.chars)
+            wordCount() {
+                this.max = 10000
+                let maxWord = 500
+                this.words = this.story.split(' ').length
+                if (this.words > maxWord) {
+                    console.log('it maxed out')
+                    this.max = this.story.split('').join("").length
+                }
+            },
+            submit(e) {
+                if (this.words > 500) {
+                    e.preventDefault()
+                    this.shake = 'form-group-error'
+                }
 
             }
         },
