@@ -178,14 +178,14 @@
             <div class="flex flex-col lg:mt-10 mt-6">
 
                 <input name="name" type="text"
-                       class="bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       class="bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="الأسم الكامل">
                 @if($errors->has('name'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('name') }}</div>
                 @endif
 
                 <input name="age" type="number"
-                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="العمر">
                 @if($errors->has('age'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('age') }}</div>
@@ -193,14 +193,14 @@
 
 
                 <input name="phone" type="number"
-                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="رقم الهاتف">
                 @if($errors->has('phone'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('phone') }}</div>
                 @endif
 
                 <select name="city" v-model="selected"
-                        class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none">
+                        class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none">
 
                     <option hidden selected>المحافظة</option>
                     <option v-for="city in cities">@{{ city }}</option>
@@ -212,7 +212,7 @@
 
 
                 <input name="email" type="email"
-                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="العنوان البريدي">
 
                 @if($errors->has('email'))
@@ -224,7 +224,7 @@
                 </h1>
                 <textarea v-model="story" name="story" v-on:input="charCount" :maxlength="500"
                           rows="12"
-                          class="mt-3 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                          class="mt-3 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                           placeholder="القصة"></textarea>
 
                 <h1 class="mt-3 text-gray-700 text-lg">

@@ -64,7 +64,7 @@
     </div>
 </div>
 
-<div class="lg:mx-36 mx-10 mt-32">
+<div class="lg:mx-36 mx-10 mt-64">
     <h1 class="text-4xl">
         شروط المسابقة:
     </h1>
@@ -109,19 +109,19 @@
     </div>
 </div>
 
-<div class="lg:mx-36 mx-10 mt-32">
+<div class="lg:mx-36 mt-64">
     <h1 class="text-4xl">
         المسابقة بتنظيم:
     </h1>
     <div class="lg:flex flex-none justify-evenly mt-10">
-        <div class="flex flex-wrap justify-center lg:w-4/12 w-full bg-white ring-4 ring-purple-500 p-6 items-center">
+        <div class="flex flex-wrap justify-center lg:w-5/12 w-full bg-white ring-4 ring-gray-200 px-10 py-8 items-center">
             <div class="w-24 lg:w-3/12">
                 <img src="assets/RtoIpost_0005_Layer-3.png" alt=""></div>
             <p class="text-lg lg:text-start text-justify lg:mt-0 mt-2 text-center w-full lg:w-9/12 p-2">
                 تقديم البرامج التعليمية المتميزة للأطفال من أعمار 7 - 16 سنة
                 تنمية قدرات الأطفال الذهنية مثل التركيز والذاكرة والسرعة والدقة
                 تعليم الأطفال الحاسب الآلي وتدريبهم على كيفية استخدام تكنولوجيا المعلومات فى الحياة العملية. </p></div>
-        <div class="flex flex-wrap justify-center lg:w-4/12 w-full lg:mt-0 mt-10 bg-white ring-4 ring-purple-500 p-6 items-center">
+        <div class="flex flex-wrap justify-center lg:w-5/12 w-full lg:mt-0 mt-10 bg-white ring-4 ring-gray-200 px-10 py-8 items-center">
             <div class="w-24 lg:w-3/12">
                 <img src="assets/RtoIpost_0006_Layer-2.png" alt=""></div>
             <p class="text-lg lg:text-start text-justify lg:mt-0 mt-2 text-center w-full lg:w-9/12 p-2">
