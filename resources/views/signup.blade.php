@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -265,7 +265,7 @@
             selected: 'المحافظة',
             story: '',
             chars: 0,
-            cities: ['واسط', 'نينوى', 'النجف', 'ميسان', 'المثنى', 'كربلاء', 'كركوك', 'صلاح الدين', 'سليمانية', 'ذي قار', 'ديالى', 'القادسية', 'دهوك', 'حلبجة', 'البصرة', 'بغداد', 'بابل', 'الأنبار', 'أربيل']
+            cities: ['خارج العراق','واسط', 'نينوى', 'النجف', 'ميسان', 'المثنى', 'كربلاء', 'كركوك', 'صلاح الدين', 'سليمانية', 'ذي قار', 'ديالى', 'القادسية', 'دهوك', 'حلبجة', 'البصرة', 'بغداد', 'بابل', 'الأنبار', 'أربيل']
         },
         methods: {
             // submit() {
@@ -283,30 +283,29 @@
             }
         },
         watch: {
-
-            //     phone() {
-            //         // convert persian digits [۰۱۲۳۴۵۶۷۸۹]
-            //         var e = '۰'.charCodeAt(0);
-            //         this.phone = this.phone.replace(/[۰-۹]/g, function (t) {
-            //             return t.charCodeAt(0) - e;
-            //         });
+            // phone() {
+            //     // convert persian digits [۰۱۲۳۴۵۶۷۸۹]
+            //     var e = '۰'.charCodeAt(0);
+            //     this.phone = this.phone.replace(/[۰-۹]/g, function (t) {
+            //         return t.charCodeAt(0) - e;
+            //     });
             //
-            //         // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
-            //         e = '٠'.charCodeAt(0);
-            //         this.phone = this.phone.replace(/[٠-٩]/g, function (t) {
-            //             return t.charCodeAt(0) - e;
-            //         });
-            //         if (this.code) {
-            //             this.full_phone = this.code + this.phone
-            //             console.log(this.full_phone)
-            //         }
+            //     // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
+            //     e = '٠'.charCodeAt(0);
+            //     this.phone = this.phone.replace(/[٠-٩]/g, function (t) {
+            //         return t.charCodeAt(0) - e;
+            //     });
+            //     if (this.code) {
+            //         this.full_phone = this.code + this.phone
+            //         console.log(this.full_phone)
+            //     }
             //
-            //     },
-            // whenever question changes, this function will run
+            // },
+            // // whenever question changes, this function will run
             // selected(oldVal, NewVal) {
             //     this.code = this.countries.find(city => country.name === this.selected).code
             //     this.$refs['prefix'].value = this.code
-            //
+
         },
 
     })
