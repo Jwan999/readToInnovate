@@ -109,7 +109,7 @@
     </div>
 </div>
 
-<div class="lg:mx-36 mx-10 mt-64">
+<div class="lg:mx-36 mx-10 mt-44">
     <h1 class="text-4xl">
         المسابقة بتنظيم:
     </h1>
@@ -150,6 +150,20 @@
         {{--                رفيعة ومتعة وابداع.--}}
         {{--            </p>--}}
         {{--        </div>--}}
+
+    </div>
+</div>
+
+<div class="lg:mx-36 mx-10 mt-44">
+    <h1 class="text-4xl">
+        المسابقة برعاية:
+    </h1>
+    <div class="lg:flex flex-none justify-evenly mt-10">
+        <div class="flex flex-wrap justify-center lg:w-5/12 w-full bg-white ring-4 ring-gray-200 px-10 py-8 items-center">
+            <div class="w-6/12 lg:w-4/12">
+                <img src="assets/icfpng.png" alt=""></div>
+
+        </div>
 
     </div>
 </div>
