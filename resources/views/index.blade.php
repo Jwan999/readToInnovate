@@ -30,7 +30,7 @@
     <div class="flex justify-center w-full">
         <div class="grid grid-cols-1 justify-items-center lg:w-4/12 w-10/12 lg:mt-28 mt-20">
             <div class="grid grid-cols-1 justify-items-center">
-                <div class="w-2/12 mb-10">
+                <div class="lg:w-2/12 w-3/12 mb-10">
                     <img src="assets/readToInnovateLogo.png" alt="">
                 </div>
                 <div>
