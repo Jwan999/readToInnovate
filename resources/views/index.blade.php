@@ -64,7 +64,7 @@
     </div>
 </div>
 
-<div class="lg:mx-36 mx-10 mt-64">
+<div class="lg:mx-36 mx-10 mt-44">
     <h1 class="text-4xl">
         شروط المسابقة:
     </h1>
