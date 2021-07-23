@@ -9,5 +9,5 @@ class Applicant extends Model
 {
     use HasFactory;
 
-    public $fillable = ['name', 'phone', 'email', 'story', 'city', 'age'];
+    public $fillable = ['name', 'phone', 'email', 'story', 'city', 'age', 'school'];
 }

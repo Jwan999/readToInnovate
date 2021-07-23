@@ -191,6 +191,13 @@
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('age') }}</div>
                 @endif
 
+                <input name="school" type="text"
+                       class="bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       placeholder="اسم المدرسة">
+                @if($errors->has('school'))
+                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('school') }}</div>
+                @endif
+
 
                 <input name="phone" type="number"
                        class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"

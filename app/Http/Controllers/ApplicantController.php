@@ -48,6 +48,8 @@ class ApplicantController extends Controller
             "age" => "required",
             "city" => "required",
             "story" => "required",
+            "school" => "required",
+
         ]);
         $data = [
             'name' => $request->name,
@@ -56,6 +58,8 @@ class ApplicantController extends Controller
             'age' => $request->age,
             'city' => $request->city,
             'story' => $request->story,
+            'school' => $request->school,
+
         ];
 
         Applicant::create($data);
