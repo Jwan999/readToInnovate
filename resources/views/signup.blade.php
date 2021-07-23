@@ -244,7 +244,7 @@
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('story') }}</div>
                 @endif
                 <div v-if="words > 500"
-                     :class="words > 500 ? 'form-group-error' : ''"
+                     :class="shake"
                      class="text-red-500 text-base opacity-95">عدد كلمات القصة يتجاوز 500 كلمة يرجي
                     تقليل عدد الكلمات
                 </div>
@@ -288,6 +288,7 @@
             submit(e) {
                 if (this.words > 500) {
                     e.preventDefault()
+                    this.shake = 'form-group-error'
                 }
 
             }
