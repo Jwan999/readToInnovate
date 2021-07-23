@@ -40,6 +40,7 @@ class ApplicantController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
         $rules = $this->validate($request, [
             "name" => "required",
             "email" => "required",
@@ -47,7 +48,6 @@ class ApplicantController extends Controller
             "age" => "required",
             "city" => "required",
             "story" => "required",
-            "file" => "required"
         ]);
         $data = [
             'name' => $request->name,
@@ -56,13 +56,9 @@ class ApplicantController extends Controller
             'age' => $request->age,
             'city' => $request->city,
             'story' => $request->story,
-            'file' => $request->file,
-
         ];
 
-
         Applicant::create($data);
-
 
         return redirect('/',)->withSuccess('تم التسجيل بنجاح');
 

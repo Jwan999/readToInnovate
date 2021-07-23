@@ -20,8 +20,6 @@ class CreateApplicantsTable extends Migration
             $table->string('age');
             $table->string('city');
             $table->string('phone');
-            $table->string('file');
-
             $table->longText('story');
 
             $table->timestamps();

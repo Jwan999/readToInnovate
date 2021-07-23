@@ -10,22 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/readToInnovateLogo.png">
-    <title>كإس العرب</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
 
-    <style>
-        body {
-            background-image: url("assets/dots.svg");
-            font-family: 'El Messiri', sans-serif;
-        }
+    <title>Read To Innovate</title>
 
-        #menu-toggle:checked + #menu {
-            display: block;
-        }
-    </style>
 </head>
 <body dir="rtl" class="bg-gray-100">
 <div id="app" class="flex justify-center items-center w-full">
-    <div class="w-full lg:w-4/12 md:w-8/12 bg-white rounded-xl shadow-lg lg:p-8 p-4 lg:mt-20 mt-8 lg:mb-0 mb-6">
+    <div class="w-full lg:w-4/12 md:w-8/12 bg-white rounded-xl shadow-lg lg:p-8 p-4 lg:mt-20 mt-8 mb-6">
         <div class="w-full lg:-mt-14 -mt-8">
             <svg viewBox="0 0 904 131" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -62,118 +54,76 @@
                 </g>
             </svg>
         </div>
-        <h1 class="text-3xl text-pink-400 mt-10">
+        <h1 class="text-3xl FD4848 mt-10">
             تسجيل في مسابقة اقرآ لنبتكر النسخة الثانية
         </h1>
 
-        <form method="POST" action="/signup" enctype="multipart/form-data">
+        <form method="POST" action="/signup">
             @csrf
             <div class="flex flex-col lg:mt-10 mt-6">
 
-                <input v-model="name" name="name" type="text"
-                       class="bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
+                <input name="name" type="text"
+                       class="bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="الأسم الكامل">
                 @if($errors->has('name'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('name') }}</div>
                 @endif
 
-                <input v-model="age" name="age" type="number"
-                       class="mt-6 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
+                <input name="age" type="number"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="العمر">
                 @if($errors->has('age'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('age') }}</div>
                 @endif
 
 
+                <input name="phone" type="number"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                       placeholder="رقم الهاتف">
+                @if($errors->has('phone'))
+                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('phone') }}</div>
+                @endif
+
                 <select name="city" v-model="selected"
-                        class="mt-6 focus:outline-none bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-12 rounded-xl outline-none">
+                        class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none">
 
                     <option hidden selected>المحافظة</option>
-                    <option v-for="city in cities">@{{ city.name }}</option>
+                    <option v-for="city in cities">@{{ city }}</option>
 
                 </select>
                 @if($errors->has('city'))
                     <div class="error text-red-500 text-base opacity-95">{{ $errors->first('city') }}</div>
                 @endif
 
-                <div class="flex w-full flex-row-reverse mt-6">
-                    <input dir="ltr" ref="prefix" readonly name="code" placeholder="+000"
-                           class="w-2/12 bg-gray-200 border border-gray-300 focus:outline-none text-lg py-3 px-1 rounded-l-xl outline-none text-center items-center">
-                    <input v-model="phone" type="text" name="phone"
-                           class="w-10/12 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-r-xl outline-none"
-                           placeholder="رقم الهاتف">
-                </div>
 
-                @if($errors->has('phone'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('phone') }}</div>
-                @endif
-
-
-                <input name="test_code" type="text"
-                       class="mt-6 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
-                       placeholder="الرمز">
-                @if($errors->has('test_code'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('test_code') }}</div>
-                @endif
-
-                <input v-model="email" name="email" type="email"
-                       class="mt-6 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
+                <input name="email" type="email"
+                       class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
                        placeholder="العنوان البريدي">
 
                 @if($errors->has('email'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('email') }}</div>
                 @endif
 
+                <h1 class="mt-6 FD4848 text-lg">
+                    عدد الاحرف المسموع هو 500
+                </h1>
+                <textarea v-model="story" name="story" v-on:input="charCount" :maxlength="500"
+                          rows="12"
+                          class="mt-3 bg-gray-100 ring-4 ring-gray-300 focus:ring-yellow-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
+                          placeholder="القصة"></textarea>
 
-                <select name="partner" ref="partner"
-                        class="mt-6 focus:outline-none bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-12 rounded-xl outline-none">
-
-                    <option hidden value>تسجيل عن طريق احد الشركاء</option>
-                    <option>IoT Kids</option>
-                    <option>Robotna</option>
-                    <option>Junior Robotics Lab</option>
-                    <option>مؤسسة العمالقة الدولية</option>
-                    <option>Multi Aid Programs - MAPS</option>
-                    <option>SmartPeek Academy</option>
-                    <option>أكاديمية التعليم المبدع</option>
-                    <option>Electronics Go</option>
-                    <option>فريق المبتكرين الصغار</option>
-
-                </select>
-
-                @if($errors->has('partner'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('partner') }}</div>
-                @endif
-
-                <input name="title" type="text"
-                       class="mt-6 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
-                       placeholder="عنوان الفديو">
-
-                @if($errors->has('title'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('title') }}</div>
-                @endif
-
-                <input name="description" type="text"
-                       class="mt-6 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none"
-                       placeholder="شرح عن الفديو">
-
-                @if($errors->has('description'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('description') }}</div>
-                @endif
-
-                <h1 class="text-xl text-gray-900 mt-6">فديو المسابقة</h1>
-                <input type="file" name="video" placeholder="الفديو"
-                       class="mt-4 bg-gray-200 border border-gray-300 focus:border-blue-400 focus:bg-gray-100 text-lg py-3 px-4 rounded-xl outline-none">
-
-                @if($errors->has('video'))
-                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('video') }}</div>
+                <h1 class="mt-3 text-gray-700 text-lg">
+                    @{{chars}} عدد الحروف
+                </h1>
+                @if($errors->has('story'))
+                    <div class="text-red-500 text-base opacity-95">{{ $errors->first('story') }}</div>
                 @endif
 
 
-                <div class="4/12">
-                    <button type="submit" @click="submit()"
-                            class="focus:outline-none my-6 outline-none bg-yellow-200 hover:bg-yellow-300 rounded-2xl items-center py-4 px-6 shadow mt-10 transition duration-200 ease-in transform hover:-translate-y-1 hover:scale-110">
-                        @lang("language.form_button")
+                <div class="flex justify-center">
+                    <button type="submit"
+                            class="blue px-5 py-3 text-white text-xl mt-10 shadow focus:shadow-2xl focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">
+                        ارسال
 
                     </button>
                 </div>
@@ -181,21 +131,18 @@
         </form>
 
     </div>
+
 </div>
 
 <script src="js/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
     var vue = new Vue({
         el: '#app',
         data: {
             selected: 'المحافظة',
-            name: null,
-            email: null,
-            phone: null,
-            age: null,
+            story: '',
+            chars: 0,
             cities: ['واسط', 'نينوى', 'النجف', 'ميسان', 'المثنى', 'كربلاء', 'كركوك', 'صلاح الدين', 'سليمانية', 'ذي قار', 'ديالى', 'القادسية', 'دهوك', 'حلبجة', 'البصرة', 'بغداد', 'بابل', 'الأنبار', 'أربيل']
         },
         methods: {
@@ -207,33 +154,38 @@
             //     this.$refs['phone'].value = this.full_phone
             //
             // },
+            charCount() {
+                this.chars = this.story.length
+                // console.log(this.chars)
 
+            }
         },
-        // watch: {
-        //     phone() {
-        //         // convert persian digits [۰۱۲۳۴۵۶۷۸۹]
-        //         var e = '۰'.charCodeAt(0);
-        //         this.phone = this.phone.replace(/[۰-۹]/g, function (t) {
-        //             return t.charCodeAt(0) - e;
-        //         });
-        //
-        //         // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
-        //         e = '٠'.charCodeAt(0);
-        //         this.phone = this.phone.replace(/[٠-٩]/g, function (t) {
-        //             return t.charCodeAt(0) - e;
-        //         });
-        //         if (this.code) {
-        //             this.full_phone = this.code + this.phone
-        //             console.log(this.full_phone)
-        //         }
-        //
-        //     },
-        // whenever question changes, this function will run
-        // selected(oldVal, NewVal) {
-        //     this.code = this.countries.find(city => country.name === this.selected).code
-        //     this.$refs['prefix'].value = this.code
-        //
-        // }
+        watch: {
+
+            //     phone() {
+            //         // convert persian digits [۰۱۲۳۴۵۶۷۸۹]
+            //         var e = '۰'.charCodeAt(0);
+            //         this.phone = this.phone.replace(/[۰-۹]/g, function (t) {
+            //             return t.charCodeAt(0) - e;
+            //         });
+            //
+            //         // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
+            //         e = '٠'.charCodeAt(0);
+            //         this.phone = this.phone.replace(/[٠-٩]/g, function (t) {
+            //             return t.charCodeAt(0) - e;
+            //         });
+            //         if (this.code) {
+            //             this.full_phone = this.code + this.phone
+            //             console.log(this.full_phone)
+            //         }
+            //
+            //     },
+            // whenever question changes, this function will run
+            // selected(oldVal, NewVal) {
+            //     this.code = this.countries.find(city => country.name === this.selected).code
+            //     this.$refs['prefix'].value = this.code
+            //
+        },
 
     })
 

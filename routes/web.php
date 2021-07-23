@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ApplicantController::class, 'index']);
 Route::get('/signup', [ApplicantController::class, 'showSignupPage']);
+Route::post('/signup', [ApplicantController::class, 'store']);
+

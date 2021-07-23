@@ -1,0 +1,22 @@
+
+body {
+    background-image: url("/assets/dots.svg");
+    font-family: 'El Messiri', sans-serif;
+}
+
+
+#menu-toggle:checked + #menu {
+    display: block;
+}
+
+.blue {
+    background-color: #FD4848;
+}
+
+.FD4848 {
+    color: #FD4848;
+}
+
+.z-1- {
+    z-index: -1;
+}
