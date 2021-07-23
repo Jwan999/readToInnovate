@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/readToInnovateLogo.png">
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="{{asset('css/stylesheet.css?v=').time()}}">
     <title>Read To Innovate</title>
     <style>
 
