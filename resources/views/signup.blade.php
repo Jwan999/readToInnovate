@@ -13,7 +13,44 @@
     <link rel="stylesheet" href="css/stylesheet.css">
 
     <title>Read To Innovate</title>
+    <style>
 
+        .form-group-alert,
+        .form-group-error {
+            animation-name: shakeError;
+            animation-fill-mode: forwards;
+            animation-duration: .6s;
+            animation-timing-function: ease-in-out;
+        }
+
+
+        @keyframes shakeError {
+            0% {
+                transform: translateX(0);
+            }
+            15% {
+                transform: translateX(0.375rem);
+            }
+            30% {
+                transform: translateX(-0.375rem);
+            }
+            45% {
+                transform: translateX(0.375rem);
+            }
+            60% {
+                transform: translateX(-0.375rem);
+            }
+            75% {
+                transform: translateX(0.375rem);
+            }
+            90% {
+                transform: translateX(-0.375rem);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 <body dir="rtl" class="bg-gray-100">
 <div id="app" class="flex justify-center items-center w-full">
