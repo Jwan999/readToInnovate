@@ -17,7 +17,7 @@
     <form class="lg:w-4/12 w-10/12" method="POST" action="{{ route('login') }}">
         @csrf
         <div class="flex flex-col">
-            <label for="email" class="text-gray-800 text-lg">البريد الالكتروني</label>
+            <label for="email" class="text-gray-800 text-lg"> البريد الالكتروني</label>
             <input id="email" type="email"
                    class="mt-3 rounded-lg focus:outline-none border border-indigo-200 px-3 py-2 form-control @error('email') is-invalid @enderror"
                    name="email"
