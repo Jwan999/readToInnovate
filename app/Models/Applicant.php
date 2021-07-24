@@ -9,5 +9,6 @@ class Applicant extends Model
 {
     use HasFactory;
 
+    protected $casts = ["rating" =>"double"];
     public $fillable = ['name', 'phone', 'email', 'story', 'city', 'age', 'school'];
 }

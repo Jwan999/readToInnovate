@@ -22,6 +22,32 @@ class ApplicantController extends Controller
         return view('signup');
     }
 
+    public function showDashboard()
+    {
+        return view('dashboard.applicants');
+    }
+
+    public function applicantsApi()
+    {
+
+        $applicants = Applicant::orderBy('created_at', 'asc')->paginate(20);
+
+        return json_encode($applicants);
+    }
+
+    public function getApplicant($id)
+    {
+        $applicant = Applicant::where('id', $id)->get();
+        return json_encode($applicant);
+    }
+
+    public function rateApplicant(Request $request, $id)
+    {
+//        dd($request->rating);
+        Applicant::where('id', $id)->update(array('rating' => $request->rating));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
