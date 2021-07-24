@@ -21,7 +21,7 @@ Route::get('/signup', [ApplicantController::class, 'showSignupPage']);
 Route::post('/signup', [ApplicantController::class, 'store']);
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/dashboard/applicants', [ApplicantController::class, 'showDashboard'])->middleware('auth');
 Route::get('/dashboard/applicants/api', [ApplicantController::class, 'applicantsApi'])->middleware('auth');

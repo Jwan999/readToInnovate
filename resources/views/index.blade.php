@@ -34,7 +34,7 @@
                     <img src="assets/readToInnovateLogo.png" alt="">
                 </div>
                 <div>
-                    <p class="text-7xl FD4848">اقرأ لنبتكر</p>
+                    <p class="text-7xl FD4848">نقرأ لنبتكر</p>
 
                 </div>
             </div>
@@ -191,7 +191,7 @@
         </g>
     </svg>
     <p class="absolute text-center w-full bottom-0 lg:mb-6 mb-2 lg:text-2xl text-base text-white mt-20">
-        مسابقة اقرا لنبتكر
+        مسابقة نقرأ لنبتكر
     </p>
 </div>
 
