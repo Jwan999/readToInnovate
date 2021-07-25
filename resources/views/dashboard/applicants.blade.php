@@ -14,7 +14,7 @@
     <title>Read To Innovate</title>
 </head>
 <body dir="rtl" class="bg-gray-100">
-<div id="app">
+<div id="app" v-cloak>
     <div class="mt-10 mx-10">
         <h1 class="text-4xl FD4848">
             قصص المتسابقين
@@ -39,6 +39,7 @@
             <p class="text-base font-mono text-black mx-4 items-center">
                 Page @{{ currentPage }}
             </p>
+            {{--            @click="paginate"--}}
             <div class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
                 <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
@@ -57,17 +58,17 @@
         </div>
         <div v-if="!applicant.hasOwnProperty('name')"
              class="flex items-center my-6">
-            <div @click="filtering = 1"
+            <div @click="getApplicants('1')"
                  :class="filtering == 1 ? ['blue','text-white'] : 'bg-white'"
                  class="bg-white font-mono ring-2 ring-red-400 px-3 py-1 cursor-pointer">
                 liked
             </div>
-            <div @click="filtering = 0"
+            <div @click="getApplicants('0')"
                  :class="filtering == 0 ? ['blue','text-white'] : 'bg-white'"
                  class="font-mono ring-2 ring-red-400 px-3 py-1 cursor-pointer">
                 disliked
             </div>
-            <div @click="filtering = null"
+            <div @click="getApplicants(); filtering = null"
                  :class="filtering == null ? ['blue','text-white'] : 'bg-white'"
                  class="bg-white font-mono ring-2 ring-red-400 px-3 py-1 cursor-pointer">
                 all
@@ -146,8 +147,7 @@
     </div>
     <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 mx-10 mb-10">
 
-
-        <div v-for="applicant in filteredApplicants" @click="getApplicants(applicant.id)"
+        <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
              class="bg-white border-2 hover:border-red-400 p-4">
 
             <div class="flex justify-between">
@@ -186,7 +186,7 @@
         </div>
 
     </div>
-
+    d
     <div v-if="applicant.hasOwnProperty('name')">
         <div class="bg-white border-2 border-red-300 mx-10 lg:p-6 p-4 mb-10">
             <div class="flex justify-between items-start">
@@ -230,23 +230,27 @@
             applicants: [],
             filtering: null,
             applicant: {},
+            id: '',
             currentPage: 1,
             heart: ''
         },
         methods: {
-            getApplicants(id) {
-                if (typeof id == 'undefined') {
-                    id = ''
-                }
-                axios.get(`/dashboard/applicants/api/${id}`).then(response => {
+            getApplicants(filter) {
+                axios.get(`/dashboard/applicants/api/${this.id}`).then(response => {
+                    // console.log(this.id)
                     this.applicants = response.data.data
-                    if (id != '') {
+                    console.log(this.applicants)
+                    if (this.id != '') {
                         this.applicant = response.data[0]
                         this.heart = `/assets/heart${this.applicant.rating}.svg`
                     }
+                    if (filter) {
+                        console.log(parseInt(filter))
+                        this.filtering = filter
+                        this.applicants = this.applicants.filter(application => application.rating == filter);
+                    }
                 })
             },
-
             rate(rating, id) {
                 axios.post(`/dashboard/applicants/api/${id}`, {
                     rating: rating
@@ -256,11 +260,13 @@
             }
         },
         computed: {
-            filteredApplicants() {
-                if (this.filtering == null)
-                    return this.applicants;
-                return this.applicants.filter(application => application.rating == this.filtering);
-            },
+            // filteredApplicants() {
+            //     if (this.filtering == null)
+            //         return this.applicants;
+            //     // return this.applicants;
+            //     this.applicants.filter(application => application.rating == this.filtering);
+            //
+            // },
         },
         mounted() {
             this.getApplicants()

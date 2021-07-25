@@ -29,9 +29,6 @@ class LoginController extends Controller
     protected $redirectTo = '/dashboard/applicants';
 
 
-
-
-
     /**
      * Create a new controller instance.
      *

@@ -19,7 +19,7 @@
     </style>
 </head>
 <body dir="rtl" class="bg-gray-100">
-<div id="app" class="flex justify-center items-center w-full">
+<div id="app" class="flex justify-center items-center w-full" v-cloak>
     <div class="w-full lg:w-4/12 md:w-8/12 bg-white rounded-xl shadow-lg lg:p-8 p-4 lg:mt-20 mt-8 mb-6">
         <div class="w-full lg:-mt-20 -mt-8">
             <svg viewBox="0 0 2891 716" version="1.1" xmlns="http://www.w3.org/2000/svg"
