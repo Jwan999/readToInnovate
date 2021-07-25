@@ -261,7 +261,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div>h
 </div>
 
 
@@ -292,6 +292,9 @@
                 if (this.words > 500) {
                     e.preventDefault()
                     this.shake = 'form-group-error form-group-alert'
+                }
+                if(this.selected == 'المحافظة'){
+                    this.selected = null
                 }
 
             }
