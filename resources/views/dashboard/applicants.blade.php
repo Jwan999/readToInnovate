@@ -15,7 +15,7 @@
 </head>
 <body dir="rtl" class="bg-gray-100">
 <div id="app" v-cloak>
-    <div class="mt-10 mx-10">
+    <div class="mt-10 lg:mx-16 mx-4">
         <h1 class="text-4xl FD4848">
             قصص المتسابقين
         </h1>
@@ -145,7 +145,7 @@
         </div>
 
     </div>
-    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 mx-16 mb-10">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 lg:mx-16 mx-4 mb-10">
 
         <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
              class="bg-white border-2 hover:border-red-400 p-4">
@@ -186,9 +186,9 @@
         </div>
 
     </div>
-    d
+
     <div v-if="applicant.hasOwnProperty('name')">
-        <div class="bg-white border-2 border-red-300 mx-10 lg:p-6 p-4 mb-10">
+        <div class="bg-white border-2 border-red-300 lg:mx-16 mx-4 lg:p-6 p-4 mb-10">
             <div class="flex justify-between items-start">
                 <div>
                     <h1 class="text-5xl font-bold">
