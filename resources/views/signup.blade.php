@@ -223,7 +223,7 @@
 
                 <input name="email" type="email"
                        class="mt-6 bg-gray-100 ring-4 ring-gray-300 focus:ring-purple-300 focus:bg-gray-100 text-lg py-3 px-4 outline-none"
-                       placeholder="العنوان البريدي">
+                       placeholder="البريد الالكتروني">
 
                 @if($errors->has('email'))
                     <div class="text-red-500 text-base opacity-95">{{ $errors->first('email') }}</div>

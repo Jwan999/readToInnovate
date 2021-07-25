@@ -145,7 +145,7 @@
         </div>
 
     </div>
-    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 mx-10 mb-10">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 mx-16 mb-10">
 
         <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
              class="bg-white border-2 hover:border-red-400 p-4">
