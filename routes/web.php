@@ -27,7 +27,7 @@ Route::get('/dashboard/applicants', [ApplicantController::class, 'showDashboard'
 Route::get('/dashboard/applicants/api', [ApplicantController::class, 'applicantsApi'])->middleware('auth');
 Route::get('/dashboard/applicants/api/{id}', [ApplicantController::class, 'getApplicant'])->middleware('auth');
 Route::post('/dashboard/applicants/api/{id}', [ApplicantController::class, 'rateApplicant'])->middleware('auth');
-Route::delete('/dashboard/applicants/api/{id}', [ApplicantController::class, 'destroy'])->middleware('auth');
+Route::delete('/dashboard/applicant/api/{id}', [ApplicantController::class, 'destroy'])->middleware('auth');
 
 
 Route::get('/logout', [LoginController::class, 'logout']);

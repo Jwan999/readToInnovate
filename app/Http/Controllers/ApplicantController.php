@@ -139,6 +139,6 @@ class ApplicantController extends Controller
     public function destroy(Applicant $applicant, $id)
     {
         $applicant = Applicant::where('id', $id);
-        $applicant->findOrFail($id)->delete();
+        $applicant->delete();
     }
 }
