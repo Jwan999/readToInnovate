@@ -41,7 +41,7 @@
             </div>
 
             <p class="text-base font-mono text-black mx-4 items-center">
-                Page @{{ currentPage }}
+                Page @{{ currentPage }} of @{{ lastPage }}
             </p>
 
             <div @click="currentPage < lastPage ? currentPage = currentPage+1 : currentPage; getApplicants()"
