@@ -134,8 +134,9 @@ class ApplicantController extends Controller
      * @param \App\Models\Applicant $applicant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Applicant $applicant)
+    public function destroy(Applicant $applicant, $id)
     {
-        //
+        $applicant = Applicant::where('id', $id);
+        $applicant->findOrFail($id)->delete();
     }
 }
