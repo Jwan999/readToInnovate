@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Applicant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class ApplicantController extends Controller
 {
@@ -29,10 +30,11 @@ class ApplicantController extends Controller
 
     public function applicantsApi()
     {
-
         $applicants = Applicant::orderBy('created_at', 'asc')->paginate(20);
 
-        return json_encode($applicants);
+        return Response::json([
+            "applicants" => $applicants
+        ]);
     }
 
     public function getApplicant($id)

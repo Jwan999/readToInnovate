@@ -19,9 +19,12 @@
         <h1 class="text-4xl FD4848">
             قصص المتسابقين
         </h1>
+        {{--pageination--}}
         <div v-if="!applicant.hasOwnProperty('name')"
              class="flex items-center my-6">
-            <div class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
+
+            <div @click="currentPage != 1 ? currentPage = currentPage - 1 : currentPage ; getApplicants()"
+                 class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
                 <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
                     <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"
@@ -36,11 +39,13 @@
                     </g>
                 </svg>
             </div>
+
             <p class="text-base font-mono text-black mx-4 items-center">
                 Page @{{ currentPage }}
             </p>
-            {{--            @click="paginate"--}}
-            <div class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
+
+            <div @click="currentPage < lastPage ? currentPage = currentPage+1 : currentPage; getApplicants()"
+                 class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
                 <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
                     <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"
@@ -56,6 +61,7 @@
                 </svg>
             </div>
         </div>
+        {{--rating--}}
         <div v-if="!applicant.hasOwnProperty('name')"
              class="flex items-center my-6">
             <div @click="getApplicants('1')"
@@ -75,7 +81,7 @@
             </div>
 
         </div>
-
+        {{--applicant id--}}
         <div class="flex justify-between items-center">
             <div v-if="applicant.hasOwnProperty('name')"
                  class="flex items-center mt-6">
@@ -145,7 +151,7 @@
         </div>
 
     </div>
-    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 lg:mx-16 mx-4 mb-10">
+    <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-3 grid-cols-1 gap-6 lg:mx-16 mx-4 mb-10">
 
         <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
              class="bg-white border-2 hover:border-red-400 p-4">
@@ -188,7 +194,7 @@
     </div>
 
     <div v-if="applicant.hasOwnProperty('name')">
-        <div class="bg-white border-2 border-red-300 lg:mx-16 mx-4 lg:p-6 p-4 mb-10">
+        <div class="mt-5 bg-white border-2 border-red-300 lg:mx-16 mx-4 lg:p-6 p-4 mb-10">
             <div class="flex justify-between items-start">
                 <div>
                     <h1 class="text-5xl font-bold">
@@ -220,7 +226,6 @@
             </div>
             <p class="mt-6 text-2xl break-words leading-relaxed">
                 @{{ applicant.story }}
-
 
             </p>
             <div v-if="showMessage" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title"
@@ -293,15 +298,13 @@
 
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
-
 
 </div>
 
 
 <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+d
 <script>
     let vue = new Vue({
         el: '#app',
@@ -311,24 +314,32 @@
             applicant: {},
             id: '',
             showMessage: false,
+            heart: '',
             currentPage: 1,
-            heart: ''
+            lastPage: null,
         },
         methods: {
             getApplicants(filter) {
-                axios.get(`/dashboard/applicants/api/${this.id}`).then(response => {
-                    // console.log(this.id)
-                    this.applicants = response.data.data
-                    console.log(this.applicants)
+                axios.get(`/dashboard/applicants/api/${this.id}`, {
+                    params: {
+                        page: this.currentPage
+                    }
+                }).then(response => {
+
                     if (this.id != '') {
                         this.applicant = response.data[0]
                         this.heart = `/assets/heart${this.applicant.rating}.svg`
                     }
                     if (filter) {
-                        console.log(parseInt(filter))
                         this.filtering = filter
                         this.applicants = this.applicants.filter(application => application.rating == filter);
                     }
+
+                    this.applicants = response.data.applicants.data
+                    this.currentPage = response.data.applicants.current_page
+                    this.lastPage = response.data.applicants.last_page
+
+
                 })
             },
             rate(rating, id) {
@@ -336,10 +347,9 @@
                     rating: rating
                 })
                 this.heart = `/assets/heart${rating}.svg`
-                // this.getApplicants(this.applicant.id)
             },
             deleteStory(id) {
-                axios.delete(`/dashboard/applicants/api/${id}`).then(response => {
+                axios.delete(`/dashboard/applicant/api/${id}`).then(response => {
                     location.reload()
                 })
             }
