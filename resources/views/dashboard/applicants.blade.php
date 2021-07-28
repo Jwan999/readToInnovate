@@ -82,73 +82,73 @@
 
         </div>
         {{--applicant id--}}
-        <div class="flex justify-between items-center">
-            <div v-if="applicant.hasOwnProperty('name')"
-                 class="flex items-center mt-6">
-                <button @click="id = applicant.id-1 ;getApplicants()"
-                        class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
-                    <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
-                        <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"
-                           stroke-linecap="round"
-                           stroke-linejoin="round">
-                            <g id="Artboard" transform="translate(-587.000000, -177.000000)" stroke="#FD4848"
-                               stroke-width="2">
-                                <g id="Arrow---Right-2" transform="translate(588.000000, 178.000000)">
-                                    <polyline id="Path" points="0.5 0 7.5 7 0.5 14"></polyline>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </button>
+{{--        <div class="flex justify-between items-center">--}}
+{{--            <div v-if="applicant.hasOwnProperty('name')"--}}
+{{--                 class="flex items-center mt-6">--}}
+{{--                <button @click="id = applicant.id-1 ;getApplicants()"--}}
+{{--                        class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">--}}
+{{--                    <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"--}}
+{{--                         xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">--}}
+{{--                        <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"--}}
+{{--                           stroke-linecap="round"--}}
+{{--                           stroke-linejoin="round">--}}
+{{--                            <g id="Artboard" transform="translate(-587.000000, -177.000000)" stroke="#FD4848"--}}
+{{--                               stroke-width="2">--}}
+{{--                                <g id="Arrow---Right-2" transform="translate(588.000000, 178.000000)">--}}
+{{--                                    <polyline id="Path" points="0.5 0 7.5 7 0.5 14"></polyline>--}}
+{{--                                </g>--}}
+{{--                            </g>--}}
+{{--                        </g>--}}
+{{--                    </svg>--}}
+{{--                </button>--}}
 
-                <p class="text-base font-mono text-black mx-4 items-center">
-                    ID: @{{ applicant.id }}
-                </p>
+{{--                <p class="text-base font-mono text-black mx-4 items-center">--}}
+{{--                    ID: @{{ applicant.id }}--}}
+{{--                </p>--}}
 
-                <button @click="id = applicant.id+1;getApplicants()"
-                        class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
-                    <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
-                        <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"
-                           stroke-linecap="round"
-                           stroke-linejoin="round">
-                            <g id="Artboard" transform="translate(-587.000000, -97.000000)" stroke="#FD4848"
-                               stroke-width="2">
-                                <g id="Arrow---Left-2" transform="translate(588.000000, 98.000000)">
-                                    <polyline id="Path" points="7.5 14 0.5 7 7.5 0"></polyline>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </button>
-            </div>
-            <a href="/dashboard/applicants">
-                <div v-if="applicant.hasOwnProperty('name')"
-                     class="flex items-center mt-6">
-                    <p class="text-base FD4848 font-mono text-black mx-4 items-center">
-                        Back
-                    </p>
-                    <button class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
-                        <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
-                            <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"
-                               stroke-linecap="round"
-                               stroke-linejoin="round">
-                                <g id="Artboard" transform="translate(-587.000000, -97.000000)" stroke="#FD4848"
-                                   stroke-width="2">
-                                    <g id="Arrow---Left-2" transform="translate(588.000000, 98.000000)">
-                                        <polyline id="Path" points="7.5 14 0.5 7 7.5 0"></polyline>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </button>
+{{--                <button @click="id = applicant.id+1;getApplicants()"--}}
+{{--                        class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">--}}
+{{--                    <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"--}}
+{{--                         xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">--}}
+{{--                        <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"--}}
+{{--                           stroke-linecap="round"--}}
+{{--                           stroke-linejoin="round">--}}
+{{--                            <g id="Artboard" transform="translate(-587.000000, -97.000000)" stroke="#FD4848"--}}
+{{--                               stroke-width="2">--}}
+{{--                                <g id="Arrow---Left-2" transform="translate(588.000000, 98.000000)">--}}
+{{--                                    <polyline id="Path" points="7.5 14 0.5 7 7.5 0"></polyline>--}}
+{{--                                </g>--}}
+{{--                            </g>--}}
+{{--                        </g>--}}
+{{--                    </svg>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <a href="/dashboard/applicants">--}}
+{{--                <div v-if="applicant.hasOwnProperty('name')"--}}
+{{--                     class="flex items-center mt-6">--}}
+{{--                    <p class="text-base FD4848 font-mono text-black mx-4 items-center">--}}
+{{--                        Back--}}
+{{--                    </p>--}}
+{{--                    <button class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">--}}
+{{--                        <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"--}}
+{{--                             xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">--}}
+{{--                            <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd"--}}
+{{--                               stroke-linecap="round"--}}
+{{--                               stroke-linejoin="round">--}}
+{{--                                <g id="Artboard" transform="translate(-587.000000, -97.000000)" stroke="#FD4848"--}}
+{{--                                   stroke-width="2">--}}
+{{--                                    <g id="Arrow---Left-2" transform="translate(588.000000, 98.000000)">--}}
+{{--                                        <polyline id="Path" points="7.5 14 0.5 7 7.5 0"></polyline>--}}
+{{--                                    </g>--}}
+{{--                                </g>--}}
+{{--                            </g>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
 
-                </div>
-            </a>
+{{--                </div>--}}
+{{--            </a>--}}
 
-        </div>
+{{--        </div>--}}
 
     </div>
     <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-3 grid-cols-1 gap-6 lg:mx-16 mx-4 mb-10">
