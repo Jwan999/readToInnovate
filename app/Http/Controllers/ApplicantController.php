@@ -30,7 +30,7 @@ class ApplicantController extends Controller
 
     public function applicantsApi()
     {
-        $applicants = Applicant::orderBy('created_at', 'asc')->paginate(20);
+        $applicants = Applicant::orderBy('created_at', 'desc')->paginate(20);
 
         return Response::json([
             "applicants" => $applicants
