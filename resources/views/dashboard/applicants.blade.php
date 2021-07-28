@@ -85,7 +85,7 @@
         <div class="flex justify-between items-center">
             <div v-if="applicant.hasOwnProperty('name')"
                  class="flex items-center mt-6">
-                <button @click="getApplicants(applicant.id - 1)"
+                <button @click="id = applicant.id-1 ;getApplicants()"
                         class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
                     <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
@@ -106,7 +106,7 @@
                     ID: @{{ applicant.id }}
                 </p>
 
-                <button @click="getApplicants(applicant.id + 1)"
+                <button @click="id = applicant.id+1;getApplicants()"
                         class="bg-white ring-2 ring-red-400 px-3 py-2 cursor-pointer">
                     <svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current text-gray-900 w-2">
@@ -284,7 +284,7 @@
 
 <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-d
+
 <script>
     let vue = new Vue({
         el: '#app',
@@ -306,7 +306,12 @@ d
                     }
                 }).then(response => {
 
+                    this.applicants = response.data.data
+                    this.currentPage = response.data.current_page
+                    this.lastPage = response.data.last_page
+
                     if (this.id != '') {
+
                         this.applicant = response.data[0]
                         this.heart = `/assets/heart${this.applicant.rating}.svg`
                     }
@@ -314,10 +319,6 @@ d
                         this.filtering = filter
                         this.applicants = this.applicants.filter(application => application.rating == filter);
                     }
-
-                    this.applicants = response.data.applicants.data
-                    this.currentPage = response.data.applicants.current_page
-                    this.lastPage = response.data.applicants.last_page
 
 
                 })
@@ -333,7 +334,7 @@ d
                 axios.delete(`/dashboard/applicant/api/${id}`).then(response => {
                     console.log(response)
                     location.reload()
-                }) .catch(function (error) {
+                }).catch(function (error) {
                     // handle error
                     console.log(error);
                 })

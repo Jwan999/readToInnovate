@@ -32,20 +32,21 @@ class ApplicantController extends Controller
     {
         $applicants = Applicant::orderBy('created_at', 'desc')->paginate(20);
 
-        return Response::json([
-            "applicants" => $applicants
-        ]);
+//        return Response::json([
+//            "applicants" => $applicants
+//        ]);
+        return json_encode($applicants);
     }
 
     public function getApplicant($id)
     {
         $applicant = Applicant::where('id', $id)->get();
+
         return json_encode($applicant);
     }
 
     public function rateApplicant(Request $request, $id)
     {
-//        dd($request->rating);
         Applicant::where('id', $id)->update(array('rating' => $request->rating));
     }
 
