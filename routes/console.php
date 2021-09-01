@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('make:user', function () {
     $new = new \App\Models\User;
-    $new->name = "Fawaz";
-    $new->email = "me@fawaz.com";
-    $new->password = \Illuminate\Support\Facades\Hash::make("fawaz999");
+    $new->name = "Name";
+    $new->email = "Email";
+    $new->password = \Illuminate\Support\Facades\Hash::make("Password");
     $new->save();
 })->purpose('Creates the first user');

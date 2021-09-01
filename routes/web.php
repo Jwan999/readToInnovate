@@ -17,8 +17,8 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', [ApplicantController::class, 'index']);
-Route::get('/signup', [ApplicantController::class, 'showSignupPage']);
-Route::post('/signup', [ApplicantController::class, 'store']);
+//Route::get('/signup', [ApplicantController::class, 'showSignupPage']);
+//Route::post('/signup', [ApplicantController::class, 'store']);
 
 
 Auth::routes(['register' => false]);

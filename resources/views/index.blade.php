@@ -39,22 +39,37 @@
                 </div>
             </div>
 
+            {{--            <div>--}}
+            {{--                <p class="lg:text-3xl text-2xl text-gray-800 text-center mt-10 text-justify">اذا كانت موهبتكم كتابة--}}
+            {{--                    القصص--}}
+            {{--                    وتمتلكون خيالا واسعاُ في--}}
+            {{--                    خلق اجواء مشوقة يستمتع بها كل من يقرأها--}}
+            {{--                    اذا مكانكم معنا في اكبر مسابقة لكتابة القصص في موسمها الثاني.</p>--}}
+            {{--            </div>--}}
+
             <div>
-                <p class="lg:text-3xl text-2xl text-gray-800 text-center mt-10 text-justify">اذا كانت موهبتكم كتابة
-                    القصص
+                <p class="lg:text-3xl text-2xl text-gray-800 text-center mt-10 text-justify">
+                    مسابقة لكتابة
+                    القصص حيث يمكنكم استثمار خيالكم في خلق اجواء مشوقة يستمتع بها كل من يقراها.
                     وتمتلكون خيالا واسعاُ في
-                    خلق اجواء مشوقة يستمتع بها كل من يقرأها
-                    اذا مكانكم معنا في اكبر مسابقة لكتابة القصص في موسمها الثاني.</p>
+                </p>
             </div>
+
 
             <div>
-                <a href="/signup">
-                    <button class="blue px-5 py-3 text-white text-2xl mt-16 shadow focus:shadow-2xl focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">
-                        بدء التسجيل
-                    </button>
-                </a>
-
+                <p class="lg:text-4xl text-2xl text-blue-400 text-center mt-10 text-center ring-4 ring-gray-200 px-3 py-4 shadow-lg bg-white font-bold">
+                    تم غلق التسجيل للمسابقة ترقبوا النتائج.
+                </p>
             </div>
+
+            {{--            <div>--}}
+            {{--                <a href="/signup">--}}
+            {{--                    <button class="blue px-5 py-3 text-white text-2xl mt-16 shadow focus:shadow-2xl focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">--}}
+            {{--                        بدء التسجيل--}}
+            {{--                    </button>--}}
+            {{--                </a>--}}
+
+            {{--            </div>--}}
         </div>
 
 
