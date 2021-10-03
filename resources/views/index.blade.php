@@ -43,7 +43,7 @@
                     } else {
                         console.log(response.data.data)
                         this.applicants = response.data.data
-                        // console.log(this.applicants)
+                        console.log(this.applicants.length)
 
                         this.applicants = this.applicants.filter(applicant => applicant.rating == '2')
 
