@@ -47,7 +47,7 @@
                     {{--                    </div>--}}
 
                 </div>
-                <p class="mt-2 text-2xl break-words leading-relaxed">
+                <p class="mt-2 text-2xl break-words leading-relaxed text-justify">
                     @{{ applicant.story }}
                 </p>
                 <div>
