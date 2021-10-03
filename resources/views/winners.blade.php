@@ -32,7 +32,7 @@
 
 
         <div v-if="applicant.hasOwnProperty('name')">
-            <div class="mt-5 bg-white border-4 border-red-300 lg:mx-28 mx-4 lg:p-6 p-4 mb-10">
+            <div class="mt-5 bg-white border-4 border-red-300 lg:mx-44 mx-4 lg:p-6 p-4 mb-10">
                 <div class="flex justify-between items-start">
 
                     {{--                    <div class="flex">--}}
@@ -51,7 +51,7 @@
                     @{{ applicant.story }}
                 </p>
                 <div>
-                    <h1 class="text-xl font-bold">
+                    <h1 class="text-xl font-bold mt-6">
                         الكاتب:
                         @{{ applicant.name }}
                     </h1>
