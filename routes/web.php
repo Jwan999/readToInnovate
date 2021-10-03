@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', [ApplicantController::class, 'index']);
+Route::get('/winners', [ApplicantController::class, 'winnersPage']);
 //Route::get('/signup', [ApplicantController::class, 'showSignupPage']);
 //Route::post('/signup', [ApplicantController::class, 'store']);
 
@@ -29,8 +30,10 @@ Route::get('/dashboard/applicants/api/{id}', [ApplicantController::class, 'getAp
 Route::post('/dashboard/applicants/api/{id}', [ApplicantController::class, 'rateApplicant'])->middleware('auth');
 Route::delete('/dashboard/applicant/api/{id}', [ApplicantController::class, 'destroy'])->middleware('auth');
 
-
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/applicants/api', [ApplicantController::class, 'applicantsApi']);
+Route::get('/applicants/api/{id}', [ApplicantController::class, 'getApplicant']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
