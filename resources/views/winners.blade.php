@@ -3,9 +3,9 @@
 @section('content')
 
     <div id="app" v-cloak>
-        <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-4 grid-cols-1 gap-6 mt-10">
+        <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-10 mx-20">
             <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
-                 class="bg-white border-2 hover:border-red-400 p-4">
+                 class="bg-white border-4 hover:border-red-300 p-4">
 
                 <div class="flex justify-between">
                     <div>
@@ -32,14 +32,9 @@
 
 
         <div v-if="applicant.hasOwnProperty('name')">
-            <div class="mt-5 bg-white border-2 border-red-300 lg:mx-16 mx-4 lg:p-6 p-4 mb-10">
+            <div class="mt-5 bg-white border-4 border-red-300 lg:mx-28 mx-4 lg:p-6 p-4 mb-10">
                 <div class="flex justify-between items-start">
-                    <div>
-                        <h1 class="text-5xl font-bold">
-                            @{{ applicant.name }}
-                        </h1>
 
-                    </div>
                     {{--                    <div class="flex">--}}
                     {{--                        <div @click="showMessage = true" class="cursor-pointer justify-self-center">--}}
                     {{--                            <img class="w-10 h-10" src="/assets/trashcan.svg" alt="">--}}
@@ -52,10 +47,15 @@
                     {{--                    </div>--}}
 
                 </div>
-                <p class="mt-6 text-2xl break-words leading-relaxed">
+                <p class="mt-2 text-2xl break-words leading-relaxed">
                     @{{ applicant.story }}
-
                 </p>
+                <div>
+                    <h1 class="text-xl font-bold">
+                        الكاتب:
+                        @{{ applicant.name }}
+                    </h1>
+                </div>
                 {{--                <div v-if="showMessage" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title"--}}
                 {{--                     role="dialog"--}}
                 {{--                     aria-modal="true">--}}
