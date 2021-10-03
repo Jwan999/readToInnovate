@@ -41,6 +41,7 @@
                         console.log(response.data)
                         this.applicant = response.data[0]
                     } else {
+                        console.log(response.data.data)
                         this.applicants = response.data.data
                         // console.log(this.applicants)
 
