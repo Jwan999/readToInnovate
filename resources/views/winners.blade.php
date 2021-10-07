@@ -1,22 +1,28 @@
 @extends('index')
 
 @section('content')
-
+    @include('layouts.navbar')
     <div id="app" v-cloak>
-        <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-10 mx-20">
+        <div v-if="applicant.hasOwnProperty('name')" class="lg:mx-20 mx-4 flex justify-end">
+            <button @click="refreshPage"
+                    class="bg-red-500 text-white px-5 py-3 text-xl focus:ring-yellow-300 ring-4 ring-gray-300 mt-4">رجوع
+            </button>
+        </div>
+        <div v-if="!applicant.hasOwnProperty('name')" class="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-4 lg:mx-20 mx-4">
             <div v-for="applicant in applicants" @click="id = applicant.id; getApplicants()"
                  class="bg-white border-4 hover:border-red-300 p-4">
 
                 <div class="flex justify-between">
                     <div>
-                        <h1 class="text-xl font-bold">
-                            الاسم:
+                        <h1 class="text-xl font-bold text-blue-500">
+                            اسم الكاتب:
                             @{{ applicant.name }}
                         </h1>
-
                         <h1 class="text-xl font-bold mt-2">
-                            القصة:
+                            عنوان القصة:
+                            @{{ applicant.title }}
                         </h1>
+
                     </div>
 
                 </div>
@@ -32,9 +38,8 @@
 
 
         <div v-if="applicant.hasOwnProperty('name')">
-            <div class="mt-5 bg-white border-4 border-red-300 lg:mx-44 mx-4 lg:p-6 p-4 mb-10">
+            <div class="mt-5 bg-white border-4 border-red-300 lg:mx-20 mx-4 lg:p-6 p-4 mb-10">
                 <div class="flex justify-between items-start">
-
                     {{--                    <div class="flex">--}}
                     {{--                        <div @click="showMessage = true" class="cursor-pointer justify-self-center">--}}
                     {{--                            <img class="w-10 h-10" src="/assets/trashcan.svg" alt="">--}}
@@ -48,10 +53,15 @@
 
                 </div>
                 <p class="mt-2 text-2xl break-words leading-relaxed text-justify">
+                    عنوان القصة:
+                    @{{ applicant.title }}
+                </p>
+                <p class="mt-2 text-2xl break-words leading-relaxed text-justify">
+                    القصة:
                     @{{ applicant.story }}
                 </p>
                 <div>
-                    <h1 class="text-xl font-bold mt-6">
+                    <h1 class="text-xl text-blue-400 font-bold mt-6">
                         الكاتب:
                         @{{ applicant.name }}
                     </h1>

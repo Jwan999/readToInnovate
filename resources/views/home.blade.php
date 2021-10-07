@@ -41,19 +41,19 @@
 
 
                 <div>
-                    <p class="lg:text-4xl text-2xl text-blue-400 text-center mt-10 text-center ring-4 ring-gray-200 px-3 py-4 shadow-lg bg-white font-bold">
-                        تم غلق التسجيل للمسابقة ترقبوا النتائج.
+                    <p class="lg:text-4xl text-2xl text-blue-400 mt-10 text-center font-bold">
+                        قصص اطفال الفائزين لسنة 2021
                     </p>
                 </div>
 
-                {{--            <div>--}}
-                {{--                <a href="/signup">--}}
-                {{--                    <button class="blue px-5 py-3 text-white text-2xl mt-16 shadow focus:shadow-2xl focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">--}}
-                {{--                        بدء التسجيل--}}
-                {{--                    </button>--}}
-                {{--                </a>--}}
+                <div>
+                    <a href="/winners">
+                        <button class="blue px-5 py-3 text-white text-2xl mt-16 shadow focus:shadow-2xl hover:ring-red-500 focus:outline-none focus:ring-yellow-300 ring-4 ring-gray-300">
+                            القصص
+                        </button>
+                    </a>
 
-                {{--            </div>--}}
+                </div>
             </div>
 
 

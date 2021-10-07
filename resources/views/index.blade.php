@@ -34,6 +34,9 @@
 
         },
         methods: {
+            refreshPage(){
+                location.reload();
+            },
             getApplicants() {
                 axios.get(`/applicants/api/${this.id}`).then(response => {
 
