@@ -13,8 +13,14 @@
     <link rel="stylesheet" href="{{asset('css/stylesheet.css?v=').time()}}">
     <title>Read To Innovate</title>
     <style>
-
-
+        pre {
+            font-family: 'El Messiri', sans-serif;
+            white-space: pre-line;
+            /*white-space: pre-wrap;       !* Since CSS 2.1 *!*/
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+        }
     </style>
 </head>
 <body dir="rtl" class="relative bg-gray-50 overflow-x-hidden max-w-full">
@@ -34,7 +40,7 @@
 
         },
         methods: {
-            refreshPage(){
+            refreshPage() {
                 location.reload();
             },
             getApplicants() {

@@ -56,10 +56,10 @@
                     عنوان القصة:
                     @{{ applicant.title }}
                 </p>
-                <p class="mt-2 text-2xl break-words leading-relaxed text-justify">
+                <pre class="mt-2 text-2xl break-words leading-relaxed text-justify">
                     القصة:
                     @{{ applicant.story }}
-                </p>
+                </pre>
                 <div>
                     <h1 class="text-xl text-blue-400 font-bold mt-6">
                         الكاتب:
